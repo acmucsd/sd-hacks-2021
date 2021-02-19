@@ -15,6 +15,12 @@ const { v4: uuidv4 } = require('uuid')
 /* GET games listing. */
 router.get('/', (req, res, next) => {
   const params = req.query; 
+  if (params.id) {
+    // if we are provided an id, we should only return that game
+    res.json(gamesDB[params.id])
+    return;
+  }
+  
   // TODO: Add filtering so we only get the results we want (get games with price under $10). 
   res.status(200).json(gamesDB);
 });
