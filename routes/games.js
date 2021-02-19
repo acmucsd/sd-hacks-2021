@@ -29,6 +29,11 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const params = req.body;
   const uuid = uuidv4();
+  if (gamesDB[uuid]) {
+    res.send("item already exists in our database");
+    return;
+  }
+
   // TODO: Take in the data from the request, create a games object using this data, and add this to our database.
   res.status(200).send(uuid);
 });
