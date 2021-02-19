@@ -21,6 +21,7 @@ router.get('/', (req, res, next) => {
     return;
   }
   
+<<<<<<< HEAD
   
   // TODO: Add filtering so we only get the results we want (get games with price that are under what's provided). 
   // If you want to get the array of just the database's values, use the following.
@@ -32,12 +33,21 @@ router.get('/', (req, res, next) => {
     filteredGames = gamesList.filter((game) => game["price"] < 10);
   }
   res.status(200).json(filteredGames);
+=======
+  // TODO: Add filtering so we only get the results we want (get games with price under $10). 
+  res.status(200).json(gamesDB);
+>>>>>>> 93b74399489b4a3a767220553035469bf9b58fc7
 });
 
 /* CREATE games listing */
 router.post('/', (req, res, next) => {
   const params = req.body;
   const uuid = uuidv4();
+  if (gamesDB[uuid]) {
+    res.send("item already exists in our database");
+    return;
+  }
+
   // TODO: Take in the data from the request, create a games object using this data, and add this to our database.
 
   gamesDB[uuid] = {
