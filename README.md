@@ -2,6 +2,7 @@
 Welcome! This repository contains all materials for our Javascript workshop at SD Hacks. 
 
 [Slides](http://acmurl.com/sdhacks)
+[Postman Workspace URL](https://www.getpostman.com/collections/21e447493c7aa584e05a)
 
 ## Installing Node.js 
 Let's install node.js into our computers. Here are some links that you can follow to get it installed, based on the OS that you run.
